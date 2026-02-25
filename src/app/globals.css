@@ -1,42 +1,168 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ------------------ */
+  /* 🎨 CORE NEUTRALS  */
+  /* ------------------ */
+
+  --color-bg-primary: #0f0f0f;
+  --color-bg-secondary: #181818;
+  --color-bg-elevated: #1f1f1f;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3b3;
+  --color-text-muted: #7a7a7a;
+
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* ------------------ */
+  /* 🎭 ACCENT SYSTEM   */
+  /* ------------------ */
+
+  /* Default Accent (Before Emotion Detection) */
+  --accent-color: #4d11b6;
+
+  /* Emotion Accent Presets */
+  --accent-happy: #583904;
+  --accent-sad: #073c92;
+  --accent-angry: #830b0b;
+  --accent-calm: #084942;
+  --accent-surprised: #5c08aa;
+
+  /* Soft Accent (for overlays, glows) */
+  --accent-soft: rgba(77, 17, 182, 0.15);
+
+  /* ------------------ */
+  /* 🅰 TYPOGRAPHY      */
+  /* ------------------ */
+
+  /* --font-family-base:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif; */
+
+  --text-hero: 60px;
+  --text-h1: 32px;
+  --text-h2: 24px;
+  --text-movie-title: 18px;
+  --text-body: 16px;
+  --text-small: 14px;
+
+  /* ------------------ */
+  /* 📏 SPACING (8px)   */
+  /* ------------------ */
+
+  --space-1: 0.8rem;
+  --space-2: 1.6rem;
+  --space-3: 2.4rem;
+  --space-4: 3.2rem;
+  --space-5: 4.8rem;
+  --space-6: 6.4rem;
+
+  /* ------------------ */
+  /* 🎬 BORDER RADIUS   */
+  /* ------------------ */
+
+  --radius-card: 16px;
+  --radius-button: 12px;
+  --radius-input: 12px;
+  --radius-modal: 20px;
+
+  /* ------------------ */
+  /* 🎞 MOTION          */
+  /* ------------------ */
+
+  --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-medium: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (prefers-color-scheme: dark) {
+@media screen and (max-width: 1000px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --text-hero: 55px;
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@media screen and (max-width: 900px) {
+  :root {
+    --text-hero: 50px;
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media screen and (max-width: 800px) {
+  :root {
+    --text-hero: 45px;
+    --text-h2: 22px;
+  }
 }
 
-* {
+@media screen and (max-width: 700px) {
+  :root {
+    --text-h2: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --text-hero: 40px;
+    --text-h2: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --text-hero: 23px;
+    --text-h2: 13px;
+  }
+
+  /* .imgWrapper {
+    background-size: cover;
+  } */
+}
+
+/* ============================= */
+/* 2️⃣ GLOBAL RESET */
+/* ============================= */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html {
+  font-size: 62.5%;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  transition:
+    background-color var(--transition-medium),
+    color var(--transition-medium);
+
+  min-height: 100dvh;
+  width: 100%;
+
+  position: relative;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 2.4rem;
+  position: relative;
+  z-index: 100;
+}
+
+main {
+  padding-left: 4px;
+  padding-right: 4px;
+  flex: 1;
+
+  display: grid;
 }
