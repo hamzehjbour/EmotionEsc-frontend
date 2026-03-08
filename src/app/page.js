@@ -24,7 +24,7 @@ function page() {
           Let your emotions decide what to watch tonight.
         </h2>
 
-        <Link href="/" className={styles.buttonPrimary}>
+        <Link href="/movies" className={styles.buttonPrimary}>
           Detect My Mood
         </Link>
       </div>
