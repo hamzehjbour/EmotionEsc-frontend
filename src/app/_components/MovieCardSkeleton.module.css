@@ -1,0 +1,6 @@
+.skeletonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-1);
+}
